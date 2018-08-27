@@ -22,18 +22,15 @@ Before do |scenario|
       # capabilities['reportName'] = 'chrome'
       # capabilities['browserName'] = 'chrome'
       # capabilities['version'] = '61'
-      Selenium::WebDriver::Chrome.driver_path = Dir.pwd+"\\features\\chromedriver.exe"
+      # Selenium::WebDriver::Chrome.driver_path = Dir.pwd+"\\features\\chromedriver.exe"
 
       # @browser = Watir::Browser.new :chrome
       # Watir::Browser.start "http://:{#$proxy}@"
 
       @browser = Watir::Browser.new(:remote,
-      :url => "http://10.170.202.32:7777/wd/hub",
+      # :url => "http://10.170.202.32:9999/wd/hub",
+      :url => "http://localhost:4444/wd/hub",
       :desired_capabilities => Selenium::WebDriver::Remote::Capabilities.chrome)
-
-      # options = Selenium::WebDriver::Chrome::Options.new
-      # options.ignore_protected_mode_settings = true
-      # @browser = Watir::Browser.new.for(:chrome, options: options)
 
     when "firefox54"
       # capabilities['platform'] = 'WINDOWS'
